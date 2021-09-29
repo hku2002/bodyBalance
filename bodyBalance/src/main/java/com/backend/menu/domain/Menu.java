@@ -1,7 +1,6 @@
 package com.backend.menu.domain;
 
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedDate;
+import com.backend.common.domain.BaseTime;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "TB_MENU")
-public class Menu {
+public class Menu extends BaseTime {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,10 +40,4 @@ public class Menu {
 	@Column(name = "MENU_CONTENT")
 	private String menuContent;
 	
-	@CreatedDate
-	@Column(name = "FIRST_REGISTER_TIME", updatable = false)
-	private LocalDateTime firstRegisterTime;
-	
-	@Column(name = "LAST_UPDATE_TIME", updatable = true)
-	private LocalDateTime lastUpdateTime;
 }
