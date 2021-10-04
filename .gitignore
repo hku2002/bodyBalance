@@ -1,5 +1,6 @@
 application-local.properties
 .classpath
 .project
+.gradle/*
 .settings/*
 bin/*
